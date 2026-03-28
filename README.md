@@ -1,21 +1,31 @@
-
-
 # Rick and Morty Mobile App
 
 A Flutter mobile application that displays characters from the Rick and Morty universe.
 The app is built using modern Flutter architecture with Riverpod for state management and Hive for local storage.
 
 ## Setup Instructions
+Mobile App Download Like
+- [https://drive.google.com/drive/folders/1cfRRyslzzVhsB8Azo9aQ5yZejCECDNlQ?usp=drive_link]
 
+## State Management Choice 
 
+# Flutter Riverpod
 
-This project is a starting point for a Flutter application.
+This project uses Flutter Riverpod for state management.
 
-A few resources to get you started if this is your first Flutter project:
+Riverpod is a powerful, 
+type-safe state management and dependency injection framework for Flutter and Dart, created 
+by the same author as the popular provider package.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Why Riverpod?
+ 1. Type-safe and compile-time safe
+ 2. No dependency on BuildContext
+ 3. Scalable for large applications
+ 4. Easy to test and maintain
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Storage Approach
+
+# Hive (Local Database)
+
+This app uses Flutter Hive for local data storage.
+
