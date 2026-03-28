@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rick_and_morty_mobile_app/controller/dashboard_controller.dart';
 import 'package:rick_and_morty_mobile_app/provider/providers.dart';
@@ -36,7 +37,9 @@ class DashboardView extends ConsumerWidget {
           _navItem(icon: Icons.grid_view_rounded, index: 1, state: state, controller: controller),
 
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              SystemNavigator.pop();
+            },
             backgroundColor: const Color(0xFF6C5CE7),
             child: const Icon(Icons.arrow_forward),
           ),
