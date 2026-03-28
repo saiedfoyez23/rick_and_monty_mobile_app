@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rick_and_morty_mobile_app/model/rick_and_morty_api_all_response_model.dart';
 import 'package:rick_and_morty_mobile_app/provider/providers.dart';
 import 'package:rick_and_morty_mobile_app/view/dashboard_view.dart';
+import 'package:rick_and_morty_mobile_app/view/edit_character_view.dart';
 
 class CharacterDetailView extends ConsumerWidget {
   const CharacterDetailView({super.key,required this.rickAndMortyApiAllResponseResults,required this.isHome});
@@ -35,7 +36,7 @@ class CharacterDetailView extends ConsumerWidget {
             },
             icon: Icon(Icons.arrow_back,color: Colors.white70,),
           ),
-          title: Text("${state.selectResult.name} ${state.items.length}"),
+          title: Text("${state.selectResult.name}"),
           backgroundColor: Colors.transparent,
           elevation: 0,
           actions: [
@@ -49,7 +50,11 @@ class CharacterDetailView extends ConsumerWidget {
             ) :
             IconButton(
               onPressed: () async {
-                await controller.addCharacter(result: state.selectResult,context: context);
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => EditCharacterView(index: state.selectResult.id)),
+                      (Route<dynamic> route) => false,
+                );
+                ref.refresh(editCharacterProvider);
               },
               icon: Icon(Icons.edit_road_rounded,size: 23,color: Colors.white70,),
             ),

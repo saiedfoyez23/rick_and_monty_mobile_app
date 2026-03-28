@@ -60,7 +60,12 @@ class StoreCharacterResponse {
   static Future<void> updateCharacter({
     required int id,
     String? name,
+    String? species,
     String? status,
+    String? gender,
+    String? type,
+    String? location,
+    String? origin,
   }) async {
     var box = Hive.box<String>("StoreCharacterResponse");
     String? data = box.get("characters");
@@ -79,6 +84,11 @@ class StoreCharacterResponse {
       var item = list[index];
       if (name != null) item.name = name;
       if (status != null) item.status = status;
+      if (species != null) item.species = species;
+      if (type != null) item.type = type;
+      if (gender != null) item.gender = gender;
+      if (location != null) item.location?.name = location;
+      if (origin != null) item.origin?.name = origin;
       list.removeAt(index);
       list.insert(0, item);
     }

@@ -1,10 +1,12 @@
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:rick_and_morty_mobile_app/controller/character_details_controller.dart';
 import 'package:rick_and_morty_mobile_app/controller/dashboard_controller.dart';
+import 'package:rick_and_morty_mobile_app/controller/edit_character_controller.dart';
 import 'package:rick_and_morty_mobile_app/controller/favorites_controller.dart';
 import 'package:rick_and_morty_mobile_app/controller/home_controller.dart';
 import 'package:rick_and_morty_mobile_app/model/rick_and_morty_api_all_response_model.dart';
 import 'package:rick_and_morty_mobile_app/state/dashboard_state.dart';
+import 'package:rick_and_morty_mobile_app/state/edit_character_state.dart';
 import 'package:rick_and_morty_mobile_app/state/favorites_state.dart';
 import 'package:rick_and_morty_mobile_app/state/home_state.dart';
 
@@ -28,4 +30,8 @@ final characterDetailsProvider = StateNotifierProvider.family<CharacterDetailsCo
 
 final favoriteProvider = StateNotifierProvider<FavoritesController, FavoritesState>(
       (ref) => FavoritesController(ref),
+);
+
+final editCharacterProvider = StateNotifierProvider<EditCharacterController, EditCharacterState>(
+      (ref) => EditCharacterController(ref: ref),
 );
