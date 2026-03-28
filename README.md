@@ -1,8 +1,13 @@
-# rick_and_morty_mobile_app
 
-A new Flutter project.
 
-## Getting Started
+# Rick and Morty Mobile App
+
+A Flutter mobile application that displays characters from the Rick and Morty universe.
+The app is built using modern Flutter architecture with Riverpod for state management and Hive for local storage.
+
+## Setup Instructions
+
+
 
 This project is a starting point for a Flutter application.
 

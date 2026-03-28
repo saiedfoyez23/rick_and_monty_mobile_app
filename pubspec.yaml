@@ -38,6 +38,7 @@ dependencies:
   google_fonts:
   hive:
   dio:
+  path_provider:
 
 
 
